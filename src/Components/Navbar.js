@@ -20,7 +20,7 @@ export default function Navbar(props) {
         <nav >
             <div className='movielogo'><img src="images/movieapplogo.png" alt="" /></div>
             <ul>
-                <li><NavLink  to='/'>Home</NavLink></li>
+                <li><NavLink  to='/movieshowapp'>Home</NavLink></li>
                 <li><NavLink to='/movie'>Movies</NavLink></li>
                 <li><NavLink to='/tv'>TV Shows</NavLink></li>
             </ul>
