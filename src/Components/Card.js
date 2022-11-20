@@ -30,7 +30,6 @@ export default function Card(props) {
       favIcon.current.style.color = 'red';
       favIcon.current.style.animation = 'pulse 1.5s linear';
    }
-
    function storeId(e){
       let localData = localStorage.getItem(props.type);
       if(localData != undefined) ids = localData.split(',');
