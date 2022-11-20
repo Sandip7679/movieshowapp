@@ -21,7 +21,7 @@ function App() {
           <Navbar func = {setfav} favourite = {fav}/>
          <div onClick={()=>setFav(false)}>
           <Routes>
-            <Route path='movieshowapp/' element={<Home/>}/>
+            <Route path='/movieshowapp' element={<Home/>}/>
             {/* <Route path='/home' element={<Home/>}/> */}
             <Route path='/movie' element={<Movies/>}/>
             <Route path='/tv' element={<TV/>}/>
