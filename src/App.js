@@ -1,24 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Navbar from './Components/Navbar';
+import TV from './Components/TV';
+import Movies from './Components/Movies';
+import {useState} from 'react';
+import {
+  BrowserRouter as Router, Routes, Route,
+} from 'react-router-dom';
+import ShowDetails from './Components/ShowDetails';
+// import People from './Components/People';
+import Home from './Components/Home';
 function App() {
+  const [fav,setFav] = useState(false);
+  function setfav(navData){
+      setFav(navData);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     <Router>
+       <div >
+          <Navbar func = {setfav} favourite = {fav}/>
+         <div onClick={()=>setFav(false)}>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            {/* <Route path='/home' element={<Home/>}/> */}
+            <Route path='/movie' element={<Movies/>}/>
+            <Route path='/tv' element={<TV/>}/>
+            <Route path='movie/:id' element={<ShowDetails type='movie'/>}/>
+            <Route path='tv/:id' element={<ShowDetails type='tv'/>}/>
+          </Routes>
+        </div>
+      </div>
+     </Router>
+    </>
   );
 }
 
