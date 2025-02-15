@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 import {useState} from 'react'
 import Favourite from './Favourtite';
+const logoimage = require('../assets/images/movieapplogo.png');
 export default function Navbar(props) {
 
    const [fav,setFav] = useState(false);
@@ -18,7 +19,8 @@ export default function Navbar(props) {
     <>
         <div className='header' onClick={()=>props.func(false)}> 
         <nav >
-            <div className='movielogo'><img src="images/movieapplogo.png" alt="" /></div>
+            {/* <div className='movielogo'><img src="images/movieapplogo.png" alt="" /></div> */}
+            <div className='movielogo'><img src={logoimage} alt="" /></div>
             <ul>
                 <li><NavLink  to='/movieshowapp'>Home</NavLink></li>
                 <li><NavLink to='/movie'>Movies</NavLink></li>
