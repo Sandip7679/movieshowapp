@@ -83,8 +83,8 @@ export default function Home() {
           <div className="goback" onClick={() => setType(true)}>
             <i className="fas fa-arrow-left"></i> Back
           </div>
-          <div className="slide_home">{title}</div>
-          <Main type={type} url_type={url_type} show={show} />
+          {/* <div className="slide_home">{title}</div> */}
+          <Main type={type} url_type={url_type} show={show} title = {title}/>
         </>
       )}
     </>

@@ -54,11 +54,14 @@ export default function ShowDetails(prop) {
                 }
                 onClick={decreaseIndex}
               >
-                <i className="fas fa-angle-left fa-5x"></i>
+                <i className="fas fa-angle-left fa-5x arrow-icon"></i>
               </div>
               <iframe
-                width="753"
-                height="480"
+                width="100%"
+                height="100%"
+                // width="753"
+                // height="480"
+                // className=""
                 src={`https://www.youtube.com/embed/${videos[index].key}`}
                 title={videos[index].name}
                 frameborder="0"
@@ -74,7 +77,7 @@ export default function ShowDetails(prop) {
                 }
                 onClick={increaseIndex}
               >
-                <i className="fas fa-angle-right fa-5x"></i>
+                <i className="fas fa-angle-right fa-5x arrow-icon"></i>
               </div>
             </div>
           </>
@@ -113,9 +116,9 @@ export default function ShowDetails(prop) {
         </div>
       </div>
       <div className="similar-shows">
-        <div className="similar_title">You may also like</div>
+        {/* <div className="similar_title">You may also like</div> */}
         <div className="similar">
-          <Main type={type} url_type={url_type} show={prop.type} />
+          <Main type={type} url_type={url_type} show={prop.type} title = {"You may also like"}/>
         </div>
       </div>
     </>
