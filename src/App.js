@@ -12,6 +12,7 @@ import Home from './Components/Home';
 // import { Route, Router, Routes } from 'react-router-dom';
 function App() {
   const [fav,setFav] = useState(false);
+  
   function setfav(navData){
       setFav(navData);
   }

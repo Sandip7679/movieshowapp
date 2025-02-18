@@ -20,29 +20,41 @@ body {
   z-index: 3;
   top: 0;
   left: 0;
+  /* justify-content: space-between; */
 }
 .movielogo img{
   margin-top: 13px;
-  height: 49px; 
-  width: 240px;
+  /* height: 49px;  */
+  /* width: 240px; */
+  width: 80%;
 }
 nav{
   display: flex;
-  gap: 9rem;
+  /* gap: 9rem; */
   align-items: center;
+  justify-content: space-between;
+  align-self: center;
+  /* background-color: white; */
+}
+.header nav{
+  width: 95%
 }
 .header nav ul{
   display: flex;
 }
-.header nav ul li{
-   margin-right: 2rem;
-}
+/* .header nav ul li{
+  margin-right: 30px;
+} */
+
  nav ul li{
    list-style: none;
   color:white;
   font-weight: bold;
   font-size: 1.3rem;
   cursor: pointer;
+}
+.header nav ul li{
+  margin-right: 20px;
 }
 nav ul li a:hover{
   color:saddlebrown;
@@ -59,6 +71,62 @@ nav ul li a{
 nav ul li a:focus{
   color:sandybrown;
 }
+
+/* ul.menu-icon{
+  font-size: 20px;
+  display: none;
+} */
+.menu-icon{
+  font-size: 20px;
+  display: block;
+}
+
+.header .mobile-menu{
+  /* display: block; */
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: var(--secondary-color);
+  right: 0;
+  top: 50px;
+  z-index: 10;
+  opacity: 0.95; 
+  /* transition: left 0.3s ease-in-out; */
+}
+
+
+@media (min-width: 800px) {
+   .menu-icon{
+      display: none; 
+   }
+   /* .header nav ul{
+    display: flex;
+  } */
+  .header .category{
+    display: flex;
+  }
+  .header .mobile-menu{
+   display: none;
+  }
+} 
+@media (max-width:800px){
+
+  .header .mobile-menu{
+    display: block;
+   }
+
+  .header .category{
+    display: none;
+  }
+  
+  .header .category li{
+    margin-top: 20px;
+  }
+ .header nav ul{
+    display: block;
+  }
+}
+
 .active{
   color:sandybrown ;
 }
@@ -70,16 +138,17 @@ nav ul li a:focus{
   margin: 10px;
 }
 .slide_home{
-  margin-top: 7%;
   z-index: 2;
   left: 8%;
   font-size: 180%;
   position: fixed;
+  top: 20px;
   color:thistle;
   margin-top: 6.5%;
 }
 .slide-title{
-  margin-top: 7%;
+  margin-top: 20px;
+  /* margin-bottom: 20px; */
   margin-left: 3%;
   color:thistle;
   font-size: 140%;
@@ -206,18 +275,21 @@ margin-left: 10px;
 /* header secondary */
 .header_secondary{
   background-color: var(--primary-color);
-  height: 70px;
-  width: 100%;
+  /* height: 70px; */
+  /* width: 100%; */
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   /* gap: 1rem; */
   position:sticky;
   z-index: 1;
-  top: 9%;
+  top: 70px;
+  /* top: 9%; */
+  margin-bottom: 60px;
   /* left: 0; */
 }
 .header_secondary nav ul{
-  position: sticky;
+  /* position: sticky; */
   margin-left: 2.5rem;
   display: flex;
   align-items: center;
@@ -256,16 +328,17 @@ margin-left: 10px;
   border-color: rosybrown;
 }
 .filter{
-  position: sticky;
+  /* position: sticky; */
   margin-top: 6px;
   left: 26rem;
   /* margin-left: 8%; */
   width: 570px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap:7px;
   color: white;
-  font-size: 1.4vw;
+  font-size: 18px;
 }
 .filter_by{
   color:salmon;
@@ -275,22 +348,32 @@ margin-left: 10px;
 
 /* main section */
 .container{
-  margin-top: 4%;
+  /* margin-top: 60px; */
   width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit,min-max(250px,1fr));
+  gap: 20px; */
 }
 .movie{
   box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-  width: 210px;
+  width: 100%;
   height: 290px;
+  max-width: 210px;
   background-color: var(--secondary-color);
   margin: 0.9rem;
   border-radius: 7px;
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
+  margin-top: 20px;
+}
+@media (max-width:520px){
+  .movie{
+    max-width: 100%;
+  }
 }
 .movie:hover{
   transform: scale(1.02);
@@ -372,15 +455,8 @@ margin-left: 10px;
 @media (max-width:900px){
   .header{
     background-color: var(--secondary-color);
-    height: 180px;
   }
-  nav ul{
-    display: flex;
-    flex-direction: column;
-  }
-  nav ul li{
-    padding-top: 10px;
-  }
+  
   .search-btn{
     width: 200px;
     margin-right: 100px;
@@ -393,8 +469,12 @@ margin-left: 10px;
 
 /* pagination */
 .pagination{
+  width: 100%;
   display: flex;
-  margin: 2% 25%;
+  flex-wrap: wrap;
+  /* margin: 2% 25%; */
+  align-self: center;
+  justify-content: center;
 }
 .pages ,.currpage, .prev-next{
 width: 13px;
